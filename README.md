@@ -1,10 +1,11 @@
 # lut-loader
-A webpack loader that allows to bundle LUT files as PNG
+
+A webpack loader that enable to bundle LUT files as PNG
 
 ## Webpack Configuration
 
-You can use lut-loader in combination with others loader.
-For example, if you want parse a .cube file and import as PNG directly in your source code you have to do:
+You can use lut-loader in combination with other loaders.
+For example, if you want to parse a .cube file and import it as PNG directly in your source code you have to do:
 
 ``` js
 module: {
@@ -25,7 +26,7 @@ module: {
 }
 ```
 
-or if you want obtain only the buffer data:
+or if you want to obtain only the buffer data:
 
 ``` js
 module: {
@@ -48,4 +49,4 @@ import LUTNight from './assets/luts-source/night.cube'
 // ...
 
 applyPngLut(LUTNight)
-``` 
+```
