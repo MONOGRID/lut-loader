@@ -5,6 +5,7 @@ A webpack loader that enable to bundle LUT files as PNG
 ## Webpack Configuration
 
 You can use lut-loader in combination with other loaders.
+
 For example, if you want to parse a .cube file and import it as PNG directly in your source code you have to do:
 
 ``` js
