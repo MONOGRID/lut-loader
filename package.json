@@ -1,0 +1,25 @@
+{
+  "name": "lut-loader",
+  "version": "0.0.1",
+  "description": "A webpack loader that allows to bundle LUT files as PNG",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MONOGRID/lut-loader.git"
+  },
+  "keywords": [
+    "lut",
+    "lut-files",
+    "cube-files",
+    "color-grading",
+    "lut-png",
+    "webpack",
+    "loader"
+  ],
+  "homepage": "https://github.com/MONOGRID/lut-loader.git",
+  "license": "MIT",
+  "dependencies": {
+    "jimp": "^0.2.28",
+    "parse-cube-lut": "^1.0.1"
+  }
+}
