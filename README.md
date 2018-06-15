@@ -2,6 +2,18 @@
 
 A webpack loader that enable to bundle LUT files as PNG
 
+## Installation
+
+```bash
+npm install lut-loader
+```
+
+or
+
+```bash
+yarn add lut-loader
+```
+
 ## Webpack Configuration
 
 You can use lut-loader in combination with other loaders.
