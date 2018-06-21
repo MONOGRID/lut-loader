@@ -22,17 +22,28 @@ module.exports = function (content) {
     return jimp.rgbaToInt.apply(this, values)
   }
 
-  let [width, height] = [lut.size * lut.size, lut.size]
+  let width = lut.size * lut.size
+  let height = lut.size
+
 
   let image = new jimp(width, height, function (err, image) {
-    for (let i = 0; i < width; i++) {
-      for (let j = 0; j < height; j++) {
-        image.setPixelColor(convertToRgb(lut.data.shift()), i, j)
-      }
+    for (let i = 0; i < lut.size; i++) {
+      let slice = new jimp(lut.size, lut.size, function (err, slice) {
+        for (let x = 0; x < lut.size; x++) {
+          for (let y = 0; y < lut.size; y++) {
+            let rgb = convertToRgb(lut.data.shift())
+            slice.setPixelColor(rgb, x, y)
+          }
+        }
+        slice.rotate(90)
+        slice.flip(true, false)
+        image.composite(slice, lut.size * i, 0)
+        if (i === lut.size - 1) {
+          image.getBuffer(jimp.MIME_PNG, (err, data) => {
+            callback(err, data)
+          })
+        }
+      })
     }
-
-    image.getBuffer(jimp.MIME_PNG, (err, data) => {
-      callback(err, data)
-    })
   })
 }
